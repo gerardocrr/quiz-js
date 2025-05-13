@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.19.2",
     "@libsql/client": "^0.15.4",
     "next": "15.3.2",
     "react": "^19.0.0",
