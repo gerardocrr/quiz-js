@@ -1,5 +1,5 @@
 import { turso } from "@/lib/db";
-import { SignedIn, UserButton } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs";
 
 export default async function Midu() {
   const { rows } = await turso.execute("SELECT * FROM answers");
@@ -7,9 +7,14 @@ export default async function Midu() {
   return (
     <div>
       <header className="flex justify-end items-center p-4 gap-4 h-16">
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
+        <UserButton
+          showName
+          appearance={{
+            elements: {
+              userButtonBox: "text-white",
+            },
+          }}
+        />
       </header>
       <h1>Midudev</h1>
       <ul>
