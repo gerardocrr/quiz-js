@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   const [hoverHeaven, setHoverHeaven] = useState(false);
@@ -30,14 +31,17 @@ export default function Home() {
           <p className="mt-2 text-white text-xl max-w-md mx-auto">
             Paz, armonía y luz eterna
           </p>
+          <Link href={"/junior"}>Junior</Link>
         </motion.div>
       </motion.div>
 
-      {/* Divider */}
+      {/* Divider 80px 64px*/}
       <div className="w-2 h-full bg-gradient-to-b from-orange-500 via-red-600 to-orange-500 relative z-20">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-gradient-to-b from-orange-500 via-red-600 to-orange-500 flex items-center justify-center">
-          <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center">
-            <div className="text-white text-xs font-bold">VS</div>
+        <div className="w-[316px] h-[80px] rounded-md absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-orange-500 via-red-600 to-orange-500 flex items-center justify-center">
+          <div className="w-[300px] h-[64px] rounded-md bg-black flex items-center justify-center">
+            <div className="text-white text-2xl font-bold">
+              ¿Eres un junior o crees poder vencer a midudev?
+            </div>
           </div>
         </div>
       </div>
@@ -63,6 +67,7 @@ export default function Home() {
           <p className="mt-2 text-orange-300 text-xl max-w-md mx-auto">
             Caos, fuego y tormento eterno
           </p>
+          <Link href={"/midu"}>Midudev</Link>
         </motion.div>
       </motion.div>
     </div>
