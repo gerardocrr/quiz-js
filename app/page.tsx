@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Home() {
-  const [hoverHeaven, setHoverHeaven] = useState(false);
-  const [hoverHell, setHoverHell] = useState(false);
+  const [hoverJunior, setHoverJunior] = useState(false);
+  const [hoverMidu, setHoverMidu] = useState(false);
 
   return (
     <div className="h-dvh w-full flex flex-row overflow-hidden">
@@ -14,15 +14,15 @@ export default function Home() {
       <motion.div
         className="relative h-full bg-gradient-to-r from-sky-300 to-blue-400 flex items-center justify-center overflow-hidden"
         animate={{
-          width: hoverHeaven ? "60%" : hoverHell ? "40%" : "50%",
+          width: hoverJunior ? "60%" : hoverMidu ? "40%" : "50%",
         }}
         transition={{ duration: 0.5 }}
-        onMouseEnter={() => setHoverHeaven(true)}
-        onMouseLeave={() => setHoverHeaven(false)}
+        onMouseEnter={() => setHoverJunior(true)}
+        onMouseLeave={() => setHoverJunior(false)}
       >
         <motion.div
           className="z-10 text-center"
-          animate={{ scale: hoverHeaven ? 1.1 : 1 }}
+          animate={{ scale: hoverJunior ? 1.1 : 1 }}
           transition={{ duration: 0.3 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
@@ -50,15 +50,15 @@ export default function Home() {
       <motion.div
         className="relative h-full bg-gradient-to-l from-red-800 to-black flex items-center justify-center overflow-hidden"
         animate={{
-          width: hoverHell ? "60%" : hoverHeaven ? "40%" : "50%",
+          width: hoverMidu ? "60%" : hoverJunior ? "40%" : "50%",
         }}
         transition={{ duration: 0.5 }}
-        onMouseEnter={() => setHoverHell(true)}
-        onMouseLeave={() => setHoverHell(false)}
+        onMouseEnter={() => setHoverMidu(true)}
+        onMouseLeave={() => setHoverMidu(false)}
       >
         <motion.div
           className="z-10 text-center"
-          animate={{ scale: hoverHell ? 1.1 : 1 }}
+          animate={{ scale: hoverMidu ? 1.1 : 1 }}
           transition={{ duration: 0.3 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold text-red-500 drop-shadow-lg">
