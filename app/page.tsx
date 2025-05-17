@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import CardJunior from "@/components/card-junior";
+import CardMidu from "@/components/card-midu";
 
 export default function Home() {
   return (
@@ -25,14 +27,18 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex-grow container mx-auto text-center mt-5">
-        <h1 className="text-5xl font-bold mb-4">
+      <main className="flex-grow container mx-auto mt-5">
+        <h1 className="text-5xl font-bold mb-4 text-center">
           ¡Pon a prueba tus conocimientos!
         </h1>
-        <p className="text-xl max-w-2xl mx-auto">
+        <p className="text-xl max-w-2xl mx-auto text-center mb-5">
           Diviértete respondiendo preguntas sobre javascript, ¿eres un junior o
           crees tener lo suficiente para vencer a midudev?
         </p>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <CardJunior />
+          <CardMidu />
+        </div>
       </main>
 
       <footer className="text-center p-4">
