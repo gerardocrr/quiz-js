@@ -3,9 +3,6 @@ import Link from "next/link";
 export default function CardMidu() {
   return (
     <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-orange-400">
-      <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-        <span className="text-3xl">💀</span>
-      </div>
       <h3 className="text-2xl font-bold text-orange-600 mb-4">
         Preguntas Difíciles
       </h3>
