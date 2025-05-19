@@ -3,10 +3,15 @@
 import Link from "next/link";
 import CardJunior from "@/components/card-junior";
 import CardMidu from "@/components/card-midu";
+import Background from "@/components/background";
+import { useState } from "react";
 
 export default function Home() {
+  const [background, setBackground] = useState("default");
+
   return (
-    <div className="flex flex-col h-dvh bg-amber-200 text-black">
+    <div className="relative flex flex-col h-dvh text-black">
+      <Background background={background} />
       <header className="container mx-auto flex justify-between p-4">
         <Link href="/">
           <h1 className="font-bold">🎮🕹️ Quiz Js</h1>
@@ -28,16 +33,26 @@ export default function Home() {
       </header>
 
       <main className="flex-grow container mx-auto mt-5">
-        <h1 className="text-5xl font-bold mb-4 text-center">
+        <h1 className="text-4xl font-bold mb-4 text-center">
           ¡Pon a prueba tus conocimientos!
         </h1>
-        <p className="text-xl max-w-2xl mx-auto text-center mb-5">
+        <p className="text-xl max-w-2xl mx-auto text-center mb-10">
           Diviértete respondiendo preguntas sobre javascript, ¿eres un junior o
           crees tener lo suficiente para vencer a midudev?
         </p>
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <CardJunior />
-          <CardMidu />
+        <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+          <section
+            onMouseEnter={() => setBackground("junior")}
+            onMouseLeave={() => setBackground("default")}
+          >
+            <CardJunior />
+          </section>
+          <section
+            onMouseEnter={() => setBackground("midu")}
+            onMouseLeave={() => setBackground("default")}
+          >
+            <CardMidu />
+          </section>
         </div>
       </main>
 
