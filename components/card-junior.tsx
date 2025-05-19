@@ -13,17 +13,17 @@ export default function CardJunior() {
           <span>⭐ Tiempo extendido para responder</span>
         </li>
         <li className="flex items-center gap-2">
-          <span>⭐ Pistas disponibles</span>
+          <span>⭐ Ideal para principintes</span>
         </li>
         <li className="flex items-center gap-2">
-          <span>⭐ Ideal para toda la familia</span>
+          <span>⭐ No necesitas iniciar sesión</span>
         </li>
       </ul>
       <Link
         href="/junior"
         className="block w-full py-3 text-center rounded-full bg-green-500 text-white font-bold hover:bg-green-400 transition-colors"
       >
-        Comenzar Nivel Fácil
+        Comenzar nivel junior
       </Link>
     </div>
   );
