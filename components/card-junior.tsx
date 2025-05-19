@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function CardJunior() {
   return (
-    <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-green-400">
-      <h3 className="text-2xl font-bold text-green-600 mb-4">Nivel junior</h3>
+    <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-blue-400">
+      <h3 className="text-2xl font-bold text-blue-600 mb-4">Nivel junior</h3>
       <p className="text-gray-600 mb-6">
         Perfecto para principiantes o para un rato divertido sin complicaciones.
         Preguntas sencillas sobre javascript.
@@ -21,7 +21,7 @@ export default function CardJunior() {
       </ul>
       <Link
         href="/junior"
-        className="block w-full py-3 text-center rounded-full bg-green-500 text-white font-bold hover:bg-green-400 transition-colors"
+        className="block w-full py-3 text-center rounded-full bg-blue-500 text-white font-bold hover:bg-blue-400 transition-colors"
       >
         Comenzar nivel junior
       </Link>

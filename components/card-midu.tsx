@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function CardMidu() {
   return (
-    <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-orange-400">
-      <h3 className="text-2xl font-bold text-orange-600 mb-4">Nivel midudev</h3>
+    <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-red-400">
+      <h3 className="text-2xl font-bold text-red-600 mb-4">Nivel midudev</h3>
       <p className="text-gray-600 mb-6">
         Para expertos y amantes de los desafíos. Preguntas complejas que pondrán
         a prueba tus conocimientos avanzados.
@@ -21,7 +21,7 @@ export default function CardMidu() {
       </ul>
       <Link
         href="/midu"
-        className="block w-full py-3 text-center rounded-full bg-orange-500 text-white font-bold hover:bg-orange-400 transition-colors"
+        className="block w-full py-3 text-center rounded-full bg-red-500 text-white font-bold hover:bg-red-400 transition-colors"
       >
         Iniciar sesión para comenzar
       </Link>
