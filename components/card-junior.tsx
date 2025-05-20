@@ -40,7 +40,7 @@ export default function CardJunior() {
         </p>
         <ul className="space-y-2 mb-8">
           <li className="flex items-center gap-2">
-            <span>⭐ Tiempo extendido para responder</span>
+            <span>⭐ Sin limite de tiempo</span>
           </li>
           <li className="flex items-center gap-2">
             <span>⭐ Ideal para principintes</span>
