@@ -74,7 +74,11 @@ export default function Junior() {
 
   return (
     <div className="relative flex flex-col h-dvh text-black">
-      <ModalLose questions={currentIndex} isVisible={modalLose} />
+      <ModalLose
+        level="junior"
+        questions={currentIndex}
+        isVisible={modalLose}
+      />
       <ModalWin isVisible={modalWin} />
       <Background background={"default"} />
       <header className="container mx-auto flex justify-between p-4">
