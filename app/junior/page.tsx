@@ -107,7 +107,7 @@ export default function Junior() {
             <div className="w-full md:w-1/4 bg-gray-100 rounded-md flex items-center justify-center p-4 md:p-8">
               <div className="relative w-full h-full max-h-[600px] rounded-xl overflow-hidden">
                 <video
-                  className="rounded-md"
+                  className="rounded-md mb-5"
                   ref={videoRef}
                   onEnded={handleEnded}
                   muted
@@ -115,6 +115,10 @@ export default function Junior() {
                 >
                   <source src="/midu/midu-jesus.mp4" type="video/mp4" />
                 </video>
+                <span>
+                  ⭐ San Midudev siempre esta disponible para ayudar a un junior
+                  en apuros
+                </span>
               </div>
             </div>
 
