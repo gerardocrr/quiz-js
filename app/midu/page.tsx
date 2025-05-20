@@ -161,7 +161,15 @@ export default function Junior() {
                   setTimeLeft={setTimeLeft}
                   setModalLose={setModalLose}
                   currentIndex={currentIndex}
-                  user={user}
+                  user={
+                    user
+                      ? {
+                          id: user.id,
+                          fullName: user.fullName ?? "",
+                          imageUrl: user.imageUrl,
+                        }
+                      : undefined
+                  }
                 />
               </div>
             </div>

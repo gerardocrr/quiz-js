@@ -2,12 +2,18 @@
 
 import { useState, useEffect, useRef } from "react";
 
+interface User {
+  id: string;
+  imageUrl: string;
+  fullName: string;
+}
+
 interface TimerProps {
   timeLeft: number;
   setTimeLeft: React.Dispatch<React.SetStateAction<number>>;
   setModalLose: React.Dispatch<React.SetStateAction<boolean>>;
   currentIndex: number;
-  user: any;
+  user: User | null | undefined;
 }
 
 export default function Timer({
