@@ -41,7 +41,7 @@ export default function Junior() {
     incorrectAudioRef.current = new Audio("/sounds/incorrect.mp3");
 
     const fetchData = async () => {
-      const res = await fetch("/api/questions");
+      const res = await fetch("/api/questions?level=junior");
       const questionsData = await res.json();
       setQuestions(questionsData);
       if (questionsData.length > 0) {
