@@ -8,7 +8,6 @@ import { useEffect, useRef, useState } from "react";
 import { Questions, Answers } from "@/lib/types";
 
 export default function Junior() {
-  const [background, setBackground] = useState("default");
   const [showResult, setShowResult] = useState(false);
   const [questions, setQuestions] = useState<Questions[]>([]);
   const [answers, setAnswers] = useState<Answers[]>([]);
@@ -74,7 +73,7 @@ export default function Junior() {
     <div className="relative flex flex-col h-dvh text-black">
       <ModalLose questions={currentIndex} isVisible={modalLose} />
       <ModalWin isVisible={modalWin} />
-      <Background background={background} />
+      <Background background={"default"} />
       <header className="container mx-auto flex justify-between p-4">
         <Link href="/">
           <h1 className="font-bold">🎮🕹️ Quiz Js</h1>
