@@ -1,6 +1,14 @@
 import { NextResponse } from "next/server";
 import { turso } from "@/lib/db";
 
+export async function GET() {
+  const { rows } = await turso.execute(
+    "SELECT * FROM ranking ORDER BY points DESC"
+  );
+
+  return NextResponse.json(rows);
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
