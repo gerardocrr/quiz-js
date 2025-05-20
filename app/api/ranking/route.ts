@@ -11,7 +11,7 @@ export async function POST(req: Request) {
     }
 
     await turso.execute(
-      `INSERT INTO ranking (user_id, questions, time) VALUES (?, ?, ?)`,
+      `INSERT OR REPLACE INTO ranking (user_id, questions, time) VALUES (?, ?, ?)`,
       [user_id, questions, time]
     );
 
