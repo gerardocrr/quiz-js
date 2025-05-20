@@ -15,21 +15,21 @@ export default function Junior() {
   const [modalLose, setModalLose] = useState(false);
   const [modalWin, setModalWin] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const correctAudio = new Audio("/sounds/correct.mp3");
-  const incorrectAudio = new Audio("/sounds/incorrect.mp3");
+  const correctAudioRef = useRef<HTMLAudioElement | null>(null);
+  const incorrectAudioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleClickAnswer = (answer: Answers) => {
     if (answer.is_correct === "true" && currentIndex < questions.length - 1) {
-      correctAudio.play();
+      correctAudioRef.current?.play();
       setCurrentIndex(currentIndex + 1);
     } else if (answer.is_correct === "false") {
-      incorrectAudio.play();
+      incorrectAudioRef.current?.play();
       setShowResult(true);
       setTimeout(() => {
         setModalLose(true);
       }, 1000);
     } else {
-      correctAudio.play();
+      correctAudioRef.current?.play();
       setTimeout(() => {
         setModalWin(true);
       }, 1000);
@@ -37,6 +37,9 @@ export default function Junior() {
   };
 
   useEffect(() => {
+    correctAudioRef.current = new Audio("/sounds/correct.mp3");
+    incorrectAudioRef.current = new Audio("/sounds/incorrect.mp3");
+
     const fetchData = async () => {
       const res = await fetch("/api/questions");
       const questionsData = await res.json();
@@ -77,8 +80,6 @@ export default function Junior() {
       <header className="container mx-auto flex justify-between p-4">
         <Link href="/">
           <h1 className="font-bold">🎮🕹️ Quiz Js</h1>
-          <span>{currentIndex}</span>
-          <span>{questions.length}</span>
         </Link>
         <div>
           <a href="https://github.com/gerardocrr/quiz-js" target="_blank">
