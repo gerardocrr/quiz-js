@@ -6,12 +6,16 @@ interface TimerProps {
   timeLeft: number;
   setTimeLeft: React.Dispatch<React.SetStateAction<number>>;
   setModalLose: React.Dispatch<React.SetStateAction<boolean>>;
+  currentIndex: number;
+  user: any;
 }
 
 export default function Timer({
   timeLeft,
   setTimeLeft,
   setModalLose,
+  currentIndex,
+  user,
 }: TimerProps) {
   const [isRunning, setIsRunning] = useState(true);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -31,6 +35,12 @@ export default function Timer({
       }, 1000);
     } else if (!isRunning && intervalRef.current) {
       clearInterval(intervalRef.current);
+      saveUserData(
+        user?.id ?? "",
+        currentIndex,
+        user?.imageUrl ?? "",
+        user?.fullName ?? ""
+      );
       setModalLose(true);
     }
 
@@ -40,6 +50,33 @@ export default function Timer({
       }
     };
   }, [isRunning, timeLeft]);
+
+  const saveUserData = async (
+    user_id: string,
+    questions: number,
+    image_url: string,
+    name: string
+  ) => {
+    const time = 60 - timeLeft;
+    const points = questions * 1000 + (60 - time) * 10;
+
+    if (currentIndex > 0) {
+      await fetch("/api/ranking", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id,
+          questions,
+          time,
+          image_url,
+          name,
+          points,
+        }),
+      });
+    }
+  };
 
   const formatTime = (seconds: number) => {
     const hours = Math.floor(seconds / 3600);
