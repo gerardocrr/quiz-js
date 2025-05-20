@@ -33,7 +33,7 @@ export default function ModalLose({ level, questions, isVisible }: Props) {
       ) : (
         <div className="w-1/4 h-1/4 bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-red-400">
           <h1 className="text-xl text-center font-bold mb-5">
-            console.error("Jugador eliminado");
+            console.error(&quot;Jugador eliminado&quot;);
           </h1>
           <p className="text-center mb-10">
             Has respondido {questions} de 10. Más que suficiente para hacer un
