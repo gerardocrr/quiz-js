@@ -4,15 +4,15 @@ import { turso } from "@/lib/db";
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { user_id, questions, time, image_url } = body;
+    const { user_id, questions, time, image_url, name } = body;
 
-    if (!user_id || !questions || !time || !image_url) {
+    if (!user_id || !questions || !time || !image_url || !name) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
     await turso.execute(
-      `INSERT OR REPLACE INTO ranking (user_id, questions, time, image_url) VALUES (?, ?, ?)`,
-      [user_id, questions, time, image_url]
+      `INSERT OR REPLACE INTO ranking (user_id, questions, time, image_url, name) VALUES (?, ?, ?)`,
+      [user_id, questions, time, image_url, name]
     );
 
     return NextResponse.json({ success: true });
