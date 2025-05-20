@@ -160,6 +160,8 @@ export default function Junior() {
                   timeLeft={timeLeft}
                   setTimeLeft={setTimeLeft}
                   setModalLose={setModalLose}
+                  currentIndex={currentIndex}
+                  user={user}
                 />
               </div>
             </div>
