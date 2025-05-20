@@ -79,7 +79,7 @@ export default function Junior() {
         questions={currentIndex}
         isVisible={modalLose}
       />
-      <ModalWin isVisible={modalWin} />
+      <ModalWin level="junior" isVisible={modalWin} />
       <Background background={"default"} />
       <header className="container mx-auto flex justify-between p-4">
         <Link href="/">
