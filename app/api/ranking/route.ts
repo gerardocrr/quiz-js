@@ -10,10 +10,10 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
-    await turso.execute(
-      `INSERT OR REPLACE INTO ranking (user_id, questions, time, image_url, name) VALUES (?, ?, ?)`,
-      [user_id, questions, time, image_url, name]
-    );
+    await turso.execute({
+      sql: `INSERT OR REPLACE INTO ranking (user_id, questions, time, image_url, name) VALUES (?, ?, ?, ?, ?)`,
+      args: [user_id, questions, time, image_url, name],
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {
