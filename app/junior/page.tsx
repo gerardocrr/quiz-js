@@ -19,14 +19,6 @@ export default function Junior() {
   const correctAudio = new Audio("/sounds/correct.mp3");
   const incorrectAudio = new Audio("/sounds/incorrect.mp3");
 
-  const handleNextQuestion = async () => {
-    if (currentIndex < questions.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      alert("Ya no hay más preguntas");
-    }
-  };
-
   const handleClickAnswer = (answer: Answers) => {
     if (answer.is_correct === "true" && currentIndex < questions.length - 1) {
       correctAudio.play();
@@ -110,7 +102,7 @@ export default function Junior() {
           <div className="flex-1 flex flex-col md:flex-row">
             <div className="w-full md:w-1/4 bg-gray-100 rounded-md flex items-center justify-center p-4 md:p-8">
               <div className="relative w-full h-full max-h-[600px] rounded-xl overflow-hidden">
-                {/* <video
+                <video
                   className="rounded-md"
                   ref={videoRef}
                   onEnded={handleEnded}
@@ -118,7 +110,7 @@ export default function Junior() {
                   autoPlay
                 >
                   <source src="/midu/midu-jesus.mp4" type="video/mp4" />
-                </video> */}
+                </video>
               </div>
             </div>
 
