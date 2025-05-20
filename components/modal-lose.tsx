@@ -1,4 +1,3 @@
-import { p } from "motion/react-client";
 import Link from "next/link";
 
 interface Props {
