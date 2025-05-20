@@ -39,7 +39,7 @@ export default function Ranking() {
         </div>
       </header>
 
-      <main className="flex-grow container mx-auto mt-5">
+      <main className="flex-grow container mx-auto mt-5 overflow-auto">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
