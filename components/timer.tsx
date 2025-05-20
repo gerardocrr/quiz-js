@@ -15,7 +15,7 @@ export default function Timer({
 }: TimerProps) {
   const [isRunning, setIsRunning] = useState(true);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const initialTime = 10;
+  const initialTime = 60;
 
   useEffect(() => {
     if (isRunning && timeLeft > 0) {
