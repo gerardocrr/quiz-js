@@ -8,3 +8,12 @@ export interface Answers {
   answer: string;
   is_correct: string;
 }
+
+export interface Users {
+  id: string;
+  questions: number;
+  time: number;
+  image_url: string;
+  name: string;
+  points: number;
+}
