@@ -35,8 +35,8 @@ export default function ModalWin({ isVisible, level }: Props) {
             ¿Quién te ayudó? ¿Copilot?
           </h1>
           <p className="text-center mb-5">
-            Respondido correctamente: 10 de 10. Claro que sí, campeón, seguro
-            sin StackOverflow.
+            Has respondido correctamente: 10 de 10. Claro que sí, campeón,
+            seguro sin StackOverflow.
           </p>
           <div className="flex gap-5">
             <Link
