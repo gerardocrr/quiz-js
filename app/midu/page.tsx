@@ -9,6 +9,14 @@ import { UserButton, useUser } from "@clerk/nextjs";
 import { useEffect, useRef, useState } from "react";
 import { Questions, Answers } from "@/lib/types";
 
+const audioPaths = [
+  "/midu/ignorancia-absoluta.mp3",
+  "/midu/que-mierda-es-esta.mp3",
+  "/midu/que-te-has-fumao.mp3",
+  "/midu/mira-futbol.mp3",
+  "/midu/frikis-cabron",
+];
+
 export default function Midu() {
   const [showResult, setShowResult] = useState(false);
   const [questions, setQuestions] = useState<Questions[]>([]);
@@ -22,14 +30,20 @@ export default function Midu() {
   const [timeLeft, setTimeLeft] = useState(60);
   const { user } = useUser();
 
+  const getRandomAudioPath = () => {
+    const randomIndex = Math.floor(Math.random() * audioPaths.length);
+    return audioPaths[randomIndex];
+  };
+
   const handleClickAnswer = async (answer: Answers) => {
     if (answer.is_correct === "true" && currentIndex < questions.length - 1) {
       correctAudioRef.current?.play();
       setCurrentIndex(currentIndex + 1);
     } else if (answer.is_correct === "false") {
+      const randomAudio = new Audio(getRandomAudioPath());
+      incorrectAudioRef.current = randomAudio;
       incorrectAudioRef.current?.play();
       setShowResult(true);
-
       await saveUserData(
         user?.id ?? "",
         currentIndex,
@@ -55,7 +69,6 @@ export default function Midu() {
 
   useEffect(() => {
     correctAudioRef.current = new Audio("/sounds/correct.mp3");
-    incorrectAudioRef.current = new Audio("/sounds/incorrect.mp3");
 
     const fetchData = async () => {
       const res = await fetch("/api/questions?level=midu");
