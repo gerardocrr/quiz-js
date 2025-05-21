@@ -65,9 +65,9 @@ export default function Ranking() {
               {dataUsers.map((user, index) => (
                 <tr
                   key={user.id}
-                  className={`border-b border-blue-50 hover:bg-blue-50 transition-colors ${
-                    index < 3 ? "bg-blue-50/50" : ""
-                  }`}
+                  className={
+                    "border-b border-blue-50 hover:bg-blue-50 transition-colors bg-blue-50/50"
+                  }
                 >
                   <td className="py-4 px-2">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-800 font-bold">
