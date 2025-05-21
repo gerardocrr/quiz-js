@@ -221,7 +221,7 @@ export default function Midu() {
                           key={row.id}
                           onClick={() => handleClickAnswer(row)}
                           disabled={showResult}
-                          className="w-full text-left p-4 rounded-lg border-2 transition-all hover:shadow-md border-green-200 hover:border-amber-400"
+                          className="w-full text-left p-4 rounded-lg border-2 transition-all hover:shadow-md border-gray-300 hover:border-rose-500 hover:bg-rose-100 bg-white"
                         >
                           <div className="flex items-center justify-between">
                             <span className="text-lg">{row.answer}</span>
