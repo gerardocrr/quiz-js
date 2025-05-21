@@ -4,6 +4,7 @@ import Link from "next/link";
 import CardJunior from "@/components/card-junior";
 import CardMidu from "@/components/card-midu";
 import Background from "@/components/background";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 import { useRef, useState } from "react";
 
 export default function Home() {
@@ -39,7 +40,13 @@ export default function Home() {
         <Link href="/">
           <h1 className="font-bold">🎮🕹️ Quiz Js</h1>
         </Link>
-        <div>
+        <div className="flex items-center gap-10">
+          <SignedIn>
+            <Link href="/midu/ranking" className="hover:underline">
+              Ranking 🏆
+            </Link>
+            <UserButton showName />
+          </SignedIn>
           <a href="https://github.com/gerardocrr/quiz-js" target="_blank">
             <svg
               viewBox="0 0 256 250"
