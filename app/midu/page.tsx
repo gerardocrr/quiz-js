@@ -24,10 +24,11 @@ export default function Midu() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalLose, setModalLose] = useState(false);
   const [modalWin, setModalWin] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(60);
+  const [videoSrc, setVideoSrc] = useState("/midu/midu-demonio.mp4");
   const videoRef = useRef<HTMLVideoElement>(null);
   const correctAudioRef = useRef<HTMLAudioElement | null>(null);
   const incorrectAudioRef = useRef<HTMLAudioElement | null>(null);
-  const [timeLeft, setTimeLeft] = useState(60);
   const { user } = useUser();
 
   const getRandomAudioPath = () => {
@@ -40,6 +41,11 @@ export default function Midu() {
       correctAudioRef.current?.play();
       setCurrentIndex(currentIndex + 1);
     } else if (answer.is_correct === "false") {
+      setVideoSrc("/midu/midu-risa.mp4");
+      if (videoRef.current) {
+        videoRef.current.load();
+        videoRef.current.play();
+      }
       const randomAudio = new Audio(getRandomAudioPath());
       incorrectAudioRef.current = randomAudio;
       incorrectAudioRef.current?.play();
@@ -172,7 +178,7 @@ export default function Midu() {
                   muted
                   autoPlay
                 >
-                  <source src="/midu/midu-demonio.mp4" type="video/mp4" />
+                  <source src={videoSrc} type="video/mp4" />
                 </video>
                 <Timer
                   timeLeft={timeLeft}
