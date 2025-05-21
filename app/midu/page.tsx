@@ -14,7 +14,7 @@ const audioPaths = [
   "/midu/que-mierda-es-esta.mp3",
   "/midu/que-te-has-fumao.mp3",
   "/midu/mira-futbol.mp3",
-  "/midu/frikis-cabron",
+  "/midu/frikis-cabron.mp3",
 ];
 
 export default function Midu() {
