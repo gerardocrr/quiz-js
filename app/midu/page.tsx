@@ -149,7 +149,7 @@ export default function Midu() {
     <div className="relative flex flex-col h-dvh text-black">
       <ModalLose level="midu" questions={currentIndex} isVisible={modalLose} />
       <ModalWin level="midu" isVisible={modalWin} />
-      <Background background={"default"} />
+      <Background background={"midu"} />
       <header className="container mx-auto flex justify-between p-4">
         <Link href="/">
           <h1 className="font-bold">🎮🕹️ Quiz Js</h1>
