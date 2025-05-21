@@ -9,7 +9,7 @@ import { UserButton, useUser } from "@clerk/nextjs";
 import { useEffect, useRef, useState } from "react";
 import { Questions, Answers } from "@/lib/types";
 
-export default function Junior() {
+export default function Midu() {
   const [showResult, setShowResult] = useState(false);
   const [questions, setQuestions] = useState<Questions[]>([]);
   const [answers, setAnswers] = useState<Answers[]>([]);
