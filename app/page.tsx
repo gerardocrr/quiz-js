@@ -4,12 +4,17 @@ import Link from "next/link";
 import CardJunior from "@/components/card-junior";
 import CardMidu from "@/components/card-midu";
 import Background from "@/components/background";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Home() {
   const [background, setBackground] = useState("default");
   const [isVisible, setIsVisible] = useState(true);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
   const handleClick = () => {
+    const randomAudio = new Audio("/sounds/correct.mp3");
+    audioRef.current = randomAudio;
+    audioRef.current?.play();
     setIsVisible(false);
   };
 
