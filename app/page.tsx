@@ -8,10 +8,28 @@ import { useState } from "react";
 
 export default function Home() {
   const [background, setBackground] = useState("default");
+  const [isVisible, setIsVisible] = useState(true);
+  const handleClick = () => {
+    setIsVisible(false);
+  };
 
   return (
     <div className="relative flex flex-col h-dvh text-black">
       <Background background={background} />
+      <div
+        className={
+          !isVisible
+            ? "hidden"
+            : "absolute flex flex-row h-dvh justify-center items-center w-full backdrop-blur-xs"
+        }
+      >
+        <button
+          className="block w-1/8 py-3 cursor-pointer text-center rounded-full bg-blue-500 text-white font-bold hover:bg-blue-400 transition-colors"
+          onClick={handleClick}
+        >
+          Activar audio
+        </button>
+      </div>
       <header className="container mx-auto flex justify-between p-4">
         <Link href="/">
           <h1 className="font-bold">🎮🕹️ Quiz Js</h1>
