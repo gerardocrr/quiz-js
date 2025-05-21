@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { useEffect, useRef, useState } from "react";
 
 export default function CardMidu() {
@@ -97,12 +98,22 @@ export default function CardMidu() {
         </span>
       </div>
 
-      <Link
-        href="/midu"
-        className="block w-full py-3 text-center rounded-full bg-red-500 text-white font-bold hover:bg-red-400 transition-colors"
-      >
-        Iniciar sesión para comenzar
-      </Link>
+      <SignedIn>
+        <Link
+          href="/midu"
+          className="block w-full py-3 text-center rounded-full bg-red-500 text-white font-bold hover:bg-red-400 transition-colors"
+        >
+          Comenzar
+        </Link>
+      </SignedIn>
+      <SignedOut>
+        <Link
+          href="/midu"
+          className="block w-full py-3 text-center rounded-full bg-red-500 text-white font-bold hover:bg-red-400 transition-colors"
+        >
+          Iniciar sesión para comenzar
+        </Link>
+      </SignedOut>
     </div>
   );
 }
