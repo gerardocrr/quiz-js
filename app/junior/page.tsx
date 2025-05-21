@@ -23,6 +23,7 @@ export default function Junior() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const correctAudioRef = useRef<HTMLAudioElement | null>(null);
   const incorrectAudioRef = useRef<HTMLAudioElement | null>(null);
+  const backgroundAudioRef = useRef<HTMLAudioElement | null>(null);
 
   const getRandomAudioPath = () => {
     const randomIndex = Math.floor(Math.random() * audioPaths.length);
@@ -51,7 +52,10 @@ export default function Junior() {
 
   useEffect(() => {
     correctAudioRef.current = new Audio("/sounds/correct.mp3");
-    // incorrectAudioRef.current = new Audio("/sounds/incorrect.mp3");
+    const bgAudio = new Audio("/sounds/relax-music.mp3");
+    backgroundAudioRef.current = bgAudio;
+    bgAudio.volume = 0.1;
+    bgAudio.play();
 
     const fetchData = async () => {
       const res = await fetch("/api/questions?level=junior");
@@ -62,6 +66,11 @@ export default function Junior() {
       }
     };
     fetchData();
+
+    return () => {
+      bgAudio.pause();
+      bgAudio.currentTime = 0;
+    };
   }, []);
 
   useEffect(() => {
