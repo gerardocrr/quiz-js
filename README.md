@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Quiz Js — ¿Podrás derrotar a midudev?
 
-## Getting Started
+Bienvenido a **Quiz Js**, una trivia interactiva para valientes frontend developers que creen saber JavaScript... hasta que el `undefined` los alcanza.
 
-First, run the development server:
+Este proyecto fue creado para el [**Clerk Hackathon**](https://github.com/midudev/hackaton-clerk-2025). Prepárate para reírte, aprender y humillarte un poco en el intento.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 ¿De qué trata?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Quiz Js es un juego de trivia dividido en dos modos:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 👶 **Modo Junior**: Preguntas fáciles de JavaScript, ¡todos pueden jugar!
+- 🔥 **Modo Derrota a midudev**: Preguntas difíciles solo para valientes (y sí, necesitas iniciar sesión con Clerk para acceder).
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🔐 ¿Cómo se integra Clerk?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Clerk se encarga del sistema de autenticación para los usuarios que quieren acceder al **modo difícil**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Se usa el **Clerk Next.js SDK**.
+- Los usuarios pueden iniciar sesión con proveedores como GitHub o Google.
+- Si no has iniciado sesión, solo puedes jugar el modo junior.
 
-## Deploy on Vercel
+🧪 Además, Clerk se integra con:
+- Lógica condicional para restringir rutas del modo difícil.
+- Información de perfil para mostrar en los resultados.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 💻 Tecnologías usadas
+
+- [**Next.js**](https://nextjs.org/)
+- [**TailwindCSS**](https://tailwindcss.com/) para los estilos
+- [**Clerk**](https://clerk.com/) para autenticación
+- [**Turso**](https://turso.tech/) para la base de datos
+
+---
+
+## 🔗 Enlaces
+
+- **Demo:** https://quiz-js1.vercel.app/
+- **Repositorio:** https://github.com/gerardocrr/quiz-js
+
+---
+
+## 📸 Capturas
+
+![Image](https://github.com/user-attachments/assets/7abdcdc4-d494-4fd4-aacc-2b8aa974cad8)
+
+![Image](https://github.com/user-attachments/assets/b850734c-04a0-4123-9bf9-1417127aa7c2)
+
+![Image](https://github.com/user-attachments/assets/c4928980-ed23-4299-92bf-909d00fba574)
+
+![Image](https://github.com/user-attachments/assets/4848c897-ec13-4045-8c4f-58c86bdf7f6d)
+
+---
