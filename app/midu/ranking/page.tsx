@@ -31,7 +31,7 @@ export default function Ranking() {
             </Link>
             <UserButton showName />
           </SignedIn>
-          <a href="https://github.com/gerardocrr/quiz-js" target="_blank">
+          <a href="https://github.com/gerardocrr/quiz-js-midu" target="_blank">
             <svg
               viewBox="0 0 256 250"
               width="30"
