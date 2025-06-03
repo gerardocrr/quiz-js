@@ -71,7 +71,7 @@ export default function CardSenior() {
 
       <SignedIn>
         <Link
-          href="/midu"
+          href="/senior"
           className="block w-full py-3 text-center rounded-full bg-red-500 text-white font-bold hover:bg-red-400 transition-colors"
         >
           Comenzar
@@ -79,7 +79,7 @@ export default function CardSenior() {
       </SignedIn>
       <SignedOut>
         <Link
-          href="/midu"
+          href="/senior"
           className="block w-full py-3 text-center rounded-full bg-red-500 text-white font-bold hover:bg-red-400 transition-colors"
         >
           Iniciar sesión para comenzar
