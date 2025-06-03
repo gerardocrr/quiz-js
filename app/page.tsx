@@ -5,37 +5,14 @@ import CardJunior from "@/components/card-junior";
 import CardSenior from "@/components/card-senior";
 import Background from "@/components/background";
 import { SignedIn, UserButton } from "@clerk/nextjs";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [background, setBackground] = useState("default");
-  const [isVisible, setIsVisible] = useState(true);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  const handleClick = () => {
-    const randomAudio = new Audio("/sounds/correct.mp3");
-    audioRef.current = randomAudio;
-    audioRef.current?.play();
-    setIsVisible(false);
-  };
 
   return (
     <div className="relative flex flex-col h-dvh text-black">
       <Background background={background} />
-      <div
-        className={
-          !isVisible
-            ? "hidden"
-            : "absolute flex flex-row h-dvh justify-center items-center w-full backdrop-blur-xs"
-        }
-      >
-        <button
-          className="block w-1/8 py-3 cursor-pointer text-center rounded-full bg-blue-500 text-white font-bold hover:bg-blue-400 transition-colors"
-          onClick={handleClick}
-        >
-          Activar audio
-        </button>
-      </div>
       <header className="container mx-auto flex justify-between p-4">
         <Link href="/">
           <h1 className="font-bold">🎮🕹️ Quiz Js</h1>
