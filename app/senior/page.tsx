@@ -17,7 +17,7 @@ const audioPaths = [
   "/midu/frikis-cabron.mp3",
 ];
 
-export default function Midu() {
+export default function Senior() {
   const [showResult, setShowResult] = useState(false);
   const [questions, setQuestions] = useState<Questions[]>([]);
   const [answers, setAnswers] = useState<Answers[]>([]);
