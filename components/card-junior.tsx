@@ -3,28 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function CardJunior() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [hiddenVideo, setHiddenVideo] = useState(true);
-
-  useEffect(() => {
-    const audio = new Audio("/sounds/relax-music.mp3");
-    audio.loop = false;
-    audioRef.current = audio;
-
-    const handleEnded = () => {
-      if (!hiddenVideo) {
-        audio.currentTime = 0;
-        audio.play().catch((e) => console.error("Error en loop:", e));
-      }
-    };
-
-    audio.addEventListener("ended", handleEnded);
-
-    return () => {
-      audio.removeEventListener("ended", handleEnded);
-      audio.pause();
-    };
-  }, []);
 
   const handleMouseEnter = () => {
     setHiddenVideo(false);
@@ -32,20 +11,12 @@ export default function CardJunior() {
       videoRef.current.currentTime = 0;
       videoRef.current.play();
     }
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play();
-    }
   };
   const handleMouseLeave = () => {
     setHiddenVideo(true);
     if (videoRef.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
-    }
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
     }
   };
   const handleEnded = () => {
@@ -92,8 +63,8 @@ export default function CardJunior() {
           </video>
         </div>
         <span>
-          ⭐ San Midudev siempre esta disponible para ayudar a cualquier junior
-          que lo necesite
+          ⭐ Jesús siempre esta disponible para ayudar a cualquier junior que lo
+          necesite
         </span>
       </div>
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import CardJunior from "@/components/card-junior";
-import CardMidu from "@/components/card-midu";
+import CardSenior from "@/components/card-senior";
 import Background from "@/components/background";
 import { SignedIn, UserButton } from "@clerk/nextjs";
 import { useRef, useState } from "react";
@@ -81,7 +81,7 @@ export default function Home() {
             onMouseEnter={() => setBackground("midu")}
             onMouseLeave={() => setBackground("default")}
           >
-            <CardMidu />
+            <CardSenior />
           </section>
         </div>
       </main>
