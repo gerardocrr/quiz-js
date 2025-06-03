@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export default function CardJunior() {
   const videoRef = useRef<HTMLVideoElement>(null);
