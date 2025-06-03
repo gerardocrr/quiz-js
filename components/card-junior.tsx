@@ -88,7 +88,7 @@ export default function CardJunior() {
             onEnded={handleEnded}
             muted
           >
-            <source src="/midu/midu-jesus.mp4" type="video/mp4" />
+            <source src="/jesus.mp4" type="video/mp4" />
           </video>
         </div>
         <span>

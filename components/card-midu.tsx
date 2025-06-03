@@ -89,7 +89,7 @@ export default function CardMidu() {
             onEnded={handleEnded}
             muted
           >
-            <source src="/midu/midu-demonio.mp4" type="video/mp4" />
+            <source src="/demon.mp4" type="video/mp4" />
           </video>
         </div>
         <span>
