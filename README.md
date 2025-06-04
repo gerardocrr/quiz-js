@@ -1,4 +1,4 @@
-# 🧠 Quiz Js — ¿Podrás derrotar a midudev?
+# 🧠 Quiz Js
 
 Bienvenido a **Quiz Js**, una trivia interactiva para valientes frontend developers que creen saber JavaScript... hasta que el `undefined` los alcanza.
 
