@@ -37,7 +37,7 @@ export default function ModalLose({ level, questions, isVisible }: Props) {
           </h1>
           <p className="text-center mb-5">
             Has respondido {questions} de 10. Más que suficiente para hacer un
-            console.log, pero no para derrotar a midudev.
+            console.log, pero no para derrotar a un senior.
           </p>
           <Link
             href="/"

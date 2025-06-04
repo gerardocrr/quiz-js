@@ -128,8 +128,12 @@ export default function Senior() {
 
   return (
     <div className="relative flex flex-col h-dvh text-black">
-      <ModalLose level="midu" questions={currentIndex} isVisible={modalLose} />
-      <ModalWin level="midu" isVisible={modalWin} />
+      <ModalLose
+        level="senior"
+        questions={currentIndex}
+        isVisible={modalLose}
+      />
+      <ModalWin level="senior" isVisible={modalWin} />
       <Background background={"senior"} />
       <header className="container mx-auto flex justify-between p-4">
         <Link href="/">
