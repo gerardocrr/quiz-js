@@ -55,7 +55,7 @@ export default function Home() {
             <CardJunior />
           </section>
           <section
-            onMouseEnter={() => setBackground("midu")}
+            onMouseEnter={() => setBackground("senior")}
             onMouseLeave={() => setBackground("default")}
           >
             <CardSenior />

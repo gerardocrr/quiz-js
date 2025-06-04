@@ -6,7 +6,7 @@ export default function Background({ background }: Props) {
     {
       default: "#f7df1e",
       junior: "#f7df1e",
-      midu: "#ff000c",
+      senior: "#ff000c",
     }[background] || "#f7df1e";
 
   return (
