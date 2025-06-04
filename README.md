@@ -41,7 +41,7 @@ Clerk se encarga del sistema de autenticación para los usuarios que quieren acc
 ## 🔗 Enlaces
 
 - **Demo:** https://quiz-js1.vercel.app/
-- **Repositorio:** https://github.com/gerardocrr/quiz-js-midu
+- **Repositorio:** https://github.com/gerardocrr/quiz-js
 
 ---
 
