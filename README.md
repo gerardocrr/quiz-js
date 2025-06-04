@@ -11,7 +11,7 @@ Este proyecto fue creado para el [**Clerk Hackathon**](https://github.com/midude
 Quiz Js es un juego de trivia dividido en dos modos:
 
 - 👶 **Modo Junior**: Preguntas fáciles de JavaScript, ¡todos pueden jugar!
-- 🔥 **Modo Derrota a midudev**: Preguntas difíciles solo para valientes (y sí, necesitas iniciar sesión con Clerk para acceder).
+- 🔥 **Modo Senior**: Preguntas difíciles solo para valientes (y sí, necesitas iniciar sesión con Clerk para acceder).
 
 ---
 
@@ -41,18 +41,12 @@ Clerk se encarga del sistema de autenticación para los usuarios que quieren acc
 ## 🔗 Enlaces
 
 - **Demo:** https://quiz-js1.vercel.app/
-- **Repositorio:** https://github.com/gerardocrr/quiz-js
+- **Repositorio:** https://github.com/gerardocrr/quiz-js-midu
 
 ---
 
 ## 📸 Capturas
 
-![Image](https://github.com/user-attachments/assets/7abdcdc4-d494-4fd4-aacc-2b8aa974cad8)
-
-![Image](https://github.com/user-attachments/assets/b850734c-04a0-4123-9bf9-1417127aa7c2)
-
-![Image](https://github.com/user-attachments/assets/c4928980-ed23-4299-92bf-909d00fba574)
-
-![Image](https://github.com/user-attachments/assets/4848c897-ec13-4045-8c4f-58c86bdf7f6d)
+![image](https://github.com/user-attachments/assets/81cd090d-e3e8-4f28-9395-ec74b6021d14)
 
 ---
