@@ -9,14 +9,6 @@ import { UserButton, useUser, SignedIn } from "@clerk/nextjs";
 import { useEffect, useRef, useState } from "react";
 import { Questions, Answers } from "@/lib/types";
 
-const audioPaths = [
-  "/midu/ignorancia-absoluta.mp3",
-  "/midu/que-mierda-es-esta.mp3",
-  "/midu/que-te-has-fumao.mp3",
-  "/midu/mira-futbol.mp3",
-  "/midu/frikis-cabron.mp3",
-];
-
 export default function Senior() {
   const [showResult, setShowResult] = useState(false);
   const [questions, setQuestions] = useState<Questions[]>([]);
@@ -25,29 +17,18 @@ export default function Senior() {
   const [modalLose, setModalLose] = useState(false);
   const [modalWin, setModalWin] = useState(false);
   const [timeLeft, setTimeLeft] = useState(60);
-  const [videoSrc, setVideoSrc] = useState("/midu/midu-demonio.mp4");
   const videoRef = useRef<HTMLVideoElement>(null);
   const correctAudioRef = useRef<HTMLAudioElement | null>(null);
   const incorrectAudioRef = useRef<HTMLAudioElement | null>(null);
   const backgroundAudioRef = useRef<HTMLAudioElement | null>(null);
   const { user } = useUser();
 
-  const getRandomAudioPath = () => {
-    const randomIndex = Math.floor(Math.random() * audioPaths.length);
-    return audioPaths[randomIndex];
-  };
-
   const handleClickAnswer = async (answer: Answers) => {
     if (answer.is_correct === "true" && currentIndex < questions.length - 1) {
       correctAudioRef.current?.play();
       setCurrentIndex(currentIndex + 1);
     } else if (answer.is_correct === "false") {
-      setVideoSrc("/midu/midu-risa.mp4");
-      if (videoRef.current) {
-        videoRef.current.load();
-        videoRef.current.play();
-      }
-      const randomAudio = new Audio(getRandomAudioPath());
+      const randomAudio = new Audio("/sounds/incorrect.mp3");
       incorrectAudioRef.current = randomAudio;
       incorrectAudioRef.current?.play();
       setShowResult(true);
@@ -149,7 +130,7 @@ export default function Senior() {
     <div className="relative flex flex-col h-dvh text-black">
       <ModalLose level="midu" questions={currentIndex} isVisible={modalLose} />
       <ModalWin level="midu" isVisible={modalWin} />
-      <Background background={"midu"} />
+      <Background background={"senior"} />
       <header className="container mx-auto flex justify-between p-4">
         <Link href="/">
           <h1 className="font-bold">🎮🕹️ Quiz Js</h1>
@@ -188,7 +169,7 @@ export default function Senior() {
                   muted
                   autoPlay
                 >
-                  <source src={videoSrc} type="video/mp4" />
+                  <source src={"/demon.mp4"} type="video/mp4" />
                 </video>
                 <Timer
                   timeLeft={timeLeft}

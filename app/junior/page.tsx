@@ -7,12 +7,6 @@ import ModalWin from "@/components/modal-win";
 import { useEffect, useRef, useState } from "react";
 import { Questions, Answers } from "@/lib/types";
 
-const audioPaths = [
-  "/midu/no-pasa-nada.mp3",
-  "/midu/no-te-preocupes.mp3",
-  "/midu/se-feliz.mp3",
-];
-
 export default function Junior() {
   const [showResult, setShowResult] = useState(false);
   const [questions, setQuestions] = useState<Questions[]>([]);
@@ -25,18 +19,13 @@ export default function Junior() {
   const incorrectAudioRef = useRef<HTMLAudioElement | null>(null);
   const backgroundAudioRef = useRef<HTMLAudioElement | null>(null);
 
-  const getRandomAudioPath = () => {
-    const randomIndex = Math.floor(Math.random() * audioPaths.length);
-    return audioPaths[randomIndex];
-  };
-
   const handleClickAnswer = (answer: Answers) => {
     if (answer.is_correct === "true" && currentIndex < questions.length - 1) {
       correctAudioRef.current?.play();
       setCurrentIndex(currentIndex + 1);
     } else if (answer.is_correct === "false") {
-      const randomAudio = new Audio(getRandomAudioPath());
-      incorrectAudioRef.current = randomAudio;
+      const errorAudio = new Audio("/sounds/incorrect.mp3");
+      incorrectAudioRef.current = errorAudio;
       incorrectAudioRef.current?.play();
       setShowResult(true);
       setTimeout(() => {
@@ -135,11 +124,11 @@ export default function Junior() {
                   muted
                   autoPlay
                 >
-                  <source src="/midu/midu-jesus.mp4" type="video/mp4" />
+                  <source src="/jesus.mp4" type="video/mp4" />
                 </video>
                 <span>
-                  ⭐ San Midudev siempre esta disponible para ayudar a un junior
-                  en apuros
+                  ⭐ Jesús siempre esta disponible para ayudar a un junior en
+                  apuros
                 </span>
               </div>
             </div>
