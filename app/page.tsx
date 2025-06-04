@@ -19,7 +19,7 @@ export default function Home() {
         </Link>
         <div className="flex items-center gap-10">
           <SignedIn>
-            <Link href="/midu/ranking" className="hover:underline">
+            <Link href="/senior/ranking" className="hover:underline">
               Ranking 🏆
             </Link>
             <UserButton showName />
